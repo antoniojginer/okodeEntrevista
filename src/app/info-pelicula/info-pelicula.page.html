@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{pelicula.original_title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>{{pelicula.tagline}}</ion-item>
+    <ion-list-header color="primary">Fecha de estreno:</ion-list-header>
+    <ion-item>{{pelicula.release_date}}</ion-item>
+    <ion-list-header color="primary">Idioma original:</ion-list-header>
+    <ion-item class="ion-text-uppercase">{{pelicula.original_language}}</ion-item>
+    <ion-list-header color="primary">¿Pelicula para adultos?</ion-list-header>
+    <ion-item>{{adultos}}</ion-item>
+    <ion-list-header color="primary">G&eacute;nero(s):</ion-list-header>
+    <ion-item *ngFor="let gen of generos; index as i">
+      {{gen.name}}
+    </ion-item>
+  <ion-list-header color="primary">Sinopsis:</ion-list-header>
+  <ion-item>{{pelicula.overview}}</ion-item>
+  </ion-list>
+
+</ion-content>

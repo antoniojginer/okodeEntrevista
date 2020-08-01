@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Peliculas
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar placeholder="Introduzca el titulo" (ionInput)="onInput($event)" (ionCancel)="recargar($event)" (ionClear)="recargar($event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-card *ngFor="let peli of peliculas" [routerLink]="['/home', peli.id]">
+      <img [src]="peli.poster_path" alt="">
+      <ion-card-content>
+        <h2>{{peli.original_title}}</h2>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>
